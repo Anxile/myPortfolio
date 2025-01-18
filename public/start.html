@@ -73,6 +73,7 @@
             font-family: 'Courier New', Courier, monospace;
             position: relative;
             left: 60px;
+            margin-right: 90px;
         }
 
         button {
@@ -140,17 +141,19 @@
         }
 
         .social img {
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             border-radius: 15px;
             border: 1px white;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.3s;
             position: absolute;
             box-shadow: 0px 5px 26px rgb(150, 150, 150);
         }
 
-        .social img:hover {}
+        .social img:hover {
+            transform: scale(1.25);
+        }
 
         #ig {
             right: 500px;
@@ -224,54 +227,29 @@
         }
 
 
-        @media (max-width: 900px) {
-            .body {
-
+        @media (max-width: 780px) {
+            .welcome {
                 flex-direction: column;
-                height: auto;
-                padding: 20px;
+                text-align: center;
             }
 
-            .left-content {
-                width: 100%;
-                padding: 20px;
-                margin-bottom: 20px;
-            }
-
-
-
-            .right-content {
+            .right-part {
                 display: none;
-                /* 隐藏右侧图片容器 / Hide right image container */
             }
 
             body {
-                background-image: 'bieber1.png';
+                background-image: url('bieber1.png'), linear-gradient(to bottom, rgb(241, 240, 240), rgba(110, 89, 1, 0.795));
                 background-size: cover;
                 background-position: center;
-                background-repeat: no-repeat;
-                background-attachment: fixed;
             }
 
-
-
-            .title {
-                font-size: 24px;
-                margin-bottom: 15px;
+            .left-part {
+                padding: 20px;
+                background-color: rgba(0, 0, 0, 0.271);
+                color: white;
             }
-
-
-
-            .description {
-                font-size: 14px;
-                margin-bottom: 15px;
-            }
-
-
-
-            .button {
-                width: 100%;
-                max-width: 200px;
+            #exhibition{
+                color: white;
             }
         }
     </style>
@@ -284,7 +262,6 @@
             <span class="option">Home</span>
             <span class="option">Blogs</span>
             <span class="option">Resume</span>
-            <span class="option">Service</span>
             <span class="option">FAQ</span>
         </span>
         <a href="https://web.whatsapp.com/">
@@ -304,7 +281,7 @@
                     <a href="https://github.com/Anxile?tab=repositories">
                         <button class="hire">Hire Me</button>
                     </a>
-                    <a href="https://github.com/Anxile?tab=repositories" target="_blank"
+                    <a id="exhibition" href="https://github.com/Anxile?tab=repositories" target="_blank"
                         style="margin-left: 30px;">Projects &#8594;</a>
 
                     <img style="width: 70px; position: absolute; bottom: 300px; left: 500px;"
