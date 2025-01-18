@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Guides:wght@400..700&display=swap"
+        rel="stylesheet">
+    <title>sep759</title>
+
+    <style>
+        :root {
+            font-family: Inter, sans-serif;
+            font-feature-settings: 'liga' 1, 'calt' 1;
+            /* fix for Chrome */
+        }
+
+        @supports (font-variation-settings: normal) {
+            :root {
+                font-family: InterVariable, sans-serif;
+            }
+        }
+
+        body {
+            margin: 0;
+            /* 移除默认的外边距 */
+            padding: 0;
+            /* 移除默认的内边距 */
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+            font-weight: 600;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0px;
+            width: auto;
+            border-bottom: 1px solid rgb(120, 123, 134);
+        }
+
+        .catalog {
+            font-family: "Permanent Marker", serif;
+            font-weight: 700;
+            font-size: larger;
+            justify-content: center;
+        }
+
+
+
+
+        .option {
+            padding: 0px 20px;
+            transition: padding 0.3s, font-size 0.3s;
+        }
+
+        .option:hover {
+            font-size: larger;
+            padding: 0px 25px 7px 25px;
+        }
+
+        #logo {
+            justify-content: left;
+            font-size: xx-large;
+            font-family: 'Courier New', Courier, monospace;
+            position: relative;
+            left: 60px;
+        }
+
+        button {
+            cursor: pointer;
+            justify-content: right;
+            border-color: black;
+            border-width: 1px;
+            padding: 10px 25px;
+            border-radius: 0px;
+            background-color: transparent;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        button:hover {
+            transform: scale(0.98);
+        }
+
+        button:active {
+            transform: scale(0.9);
+        }
+
+
+        .contact {
+            margin-right: 60px;
+        }
+
+        .contact:hover {
+            background-color: black;
+            color: white;
+        }
+
+        .contact:active {
+            background-color: white;
+            color: black;
+        }
+
+        .welcome {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .left-part,
+        .right-part {
+            flex: 1;
+            /* 让左右部分各占一半宽度 */
+        }
+
+        .left-part {}
+
+        #me {
+            width: 100%;
+            background: linear-gradient(to bottom, #6e480252, #c57f0508);
+            position: relative;
+        }
+
+
+        .social {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            right: 5px;
+            top: 300px;
+            border: none;
+            border-radius: 20px;
+        }
+
+        .social img {
+            width: 50px;
+            height: 50px;
+            border-radius: 15px;
+            border: 1px white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            position: absolute;
+            box-shadow: 0px 5px 26px rgb(150, 150, 150);
+        }
+
+        .social img:hover {}
+
+        #ig {
+            right: 500px;
+        }
+
+        #ln {
+            right: 120px;
+            bottom: 100px;
+        }
+
+        #share {
+            right: 80px;
+            top: 100px;
+        }
+
+        .hire {
+            padding: 15px 30px;
+            background-color: rgb(243, 85, 18);
+            color: white;
+            border: none;
+            font-size: 20px;
+            font-family: Inter;
+            font-weight: 300;
+        }
+
+        .intro {
+            padding-top: 80px;
+            padding-left: 100px;
+            margin-bottom: 70px;
+        }
+
+        #opening {
+            display: inline-block;
+            font-family: Inter;
+            font-weight: 800;
+            font-size: 80px;
+            margin: 0px;
+        }
+
+        #introduction {
+            font-family: Edu AU VIC WA NT Guides;
+            font-weight: 300;
+            font-size: 20px;
+            max-width: 570px;
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+
+        #statistic {
+            padding: 60px 100px;
+            background-color: rgba(0, 0, 0, 0.853);
+        }
+
+        .learn {
+            background: rgb(255, 227, 17);
+        }
+
+        .infolist {
+            margin-top: 70px;
+            padding: 0px;
+            display: flex;
+            flex-direction: row;
+            gap: 60px;
+            list-style-type: none;
+            font-size: 20px;
+        }
+
+        .infolist span {
+            font-size: 15px;
+            font-weight: 300;
+        }
+
+
+        @media (max-width: 900px) {
+
+            .container {
+
+                flex-direction: column;
+
+                height: auto;
+
+                padding: 20px;
+
+            }
+
+
+
+            .left-content {
+
+                width: 100%;
+
+                padding: 20px;
+
+                margin-bottom: 20px;
+
+            }
+
+
+
+            .right-content {
+
+                display: none;
+                /* 隐藏右侧图片容器 / Hide right image container */
+
+            }
+
+
+
+            body {
+
+                background-image: url('./assets/images/start-right.png');
+
+                background-size: cover;
+
+                background-position: center;
+
+                background-repeat: no-repeat;
+
+                background-attachment: fixed;
+
+            }
+
+
+
+            .title {
+
+                font-size: 24px;
+
+                margin-bottom: 15px;
+
+            }
+
+
+
+            .description {
+
+                font-size: 14px;
+
+                margin-bottom: 15px;
+
+            }
+
+
+
+            .button {
+
+                width: 100%;
+
+                max-width: 200px;
+
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <strong id="logo">Yihe.C</strong>
+        <span class="catalog">
+            <span class="option">Home</span>
+            <span class="option">Blogs</span>
+            <span class="option">Resume</span>
+            <span class="option">Service</span>
+            <span class="option">FAQ</span>
+        </span>
+        <a href="https://web.whatsapp.com/">
+            <button class="contact">Let's chat</button>
+        </a>
+    </div>
+    <div class="welcome">
+        <div class="left-part">
+            <div class="intro">
+                <p id="opening">Hi! I Am</p>
+                <button
+                    style="position: relative; bottom: 15px; left:5px; border: none; border-radius: 100px; background: linear-gradient(to right, rgb(195, 0, 212), rgb(38, 38, 255)); color: white; font-weight: 600; font-size: 20px; box-shadow: 0px 4px 15px rgba(6, 29, 237, 0.5);">UI/UX</button>
+                <p id="opening">Yihe Chen</p>
+                <p id="introduction">A student at Mcmaster majoring in system and technology with hands-on experience
+                </p>
+                <div style="margin-top: 100px">
+                    <a href="https://github.com/Anxile?tab=repositories">
+                        <button class="hire">Hire Me</button>
+                    </a>
+                    <a href="https://github.com/Anxile?tab=repositories" target="_blank"
+                        style="margin-left: 30px;">Projects &#8594;</a>
+
+                    <img style="width: 70px; position: absolute; bottom: 300px; left: 500px;"
+                        src="myapp\public\2571_mcmaster_marauders-primary-2012.png" alt="">
+                </div>
+                <div class="baseinfo">
+                    <ul class="infolist">
+                        <li>
+                            <strong>Gender</strong><br>
+                            <span>male</span>
+                        </li>
+                        <li>
+                            <strong>Skills</strong><br>
+                            <span>Programming, testing, managing</span>
+                        </li>
+                        <li>
+                            <strong>Contact</strong><br>
+                            <span>chen61@mcmaster.ca</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="statistic">
+                <a href="https://github.com/Anxile?tab=repositories">
+                    <button class="learn">Learn more</button>
+                </a>
+            </div>
+        </div>
+        <div class="right-part">
+            <img src="bieber1.png" alt="My photo" id="me">
+            <div class="social">
+                <a href="">
+                    <img id="ig" src="1_Instagram_colored_svg_1-1024.webp" alt="">
+                </a>
+                <a href="https://www.linkedin.com/in/onebox-chen/">
+                    <img id="ln" src="1656996524linkedin-app-icon.webp" alt="">
+                </a>
+                <a id="copyButton">
+                    <img id="share" src="share.png" alt="">
+                </a>
+
+                <script>
+                    document.getElementById('copyButton').addEventListener('click', function () {
+                        const link = 'https://www.linkedin.com/in/onebox-chen/';
+
+                        // 创建一个临时的文本输入框
+                        const tempInput = document.createElement('input');
+                        tempInput.value = link;
+                        document.body.appendChild(tempInput);
+
+                        // 选中文本并复制
+                        tempInput.select();
+                        document.execCommand('copy');
+
+                        // 移除临时输入框
+                        document.body.removeChild(tempInput);
+
+                        alert('Link copied to clipboard!');
+                    });
+
+                </script>
+            </div>
+        </div>
+    </div>
+
+    <div class="resume"></div>
+</body>
+
+</html>
