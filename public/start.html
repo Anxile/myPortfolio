@@ -25,6 +25,34 @@
             }
         }
 
+        @media (max-width: 780px) {
+            .welcome {
+                flex-direction: column;
+                text-align: center;
+                text-shadow: 0px 0px 30px rgb(255, 255, 255);
+            }
+
+            .right-part {
+                display: none;
+            }
+
+            body {
+                background-image: url('bieber1.png'), linear-gradient(to bottom, rgb(241, 240, 240), rgba(110, 89, 1, 0.795));
+                background-size: cover;
+                background-position: center;
+            }
+
+            .left-part {
+                padding: 20px;
+                background-color: rgba(0, 0, 0, 0.271);
+                color: white;
+            }
+
+            #exhibition {
+                color: white;
+            }
+        }
+
         body {
             margin: 0;
             /* 移除默认的外边距 */
@@ -113,22 +141,29 @@
         .welcome {
             display: flex;
             flex-direction: row;
+            min-height: 100vh; /* 设置最小高度为视口高度 */
         }
 
         .left-part,
         .right-part {
             flex: 1;
-            /* 让左右部分各占一半宽度 */
+            display: flex;
+            flex-direction: column;
         }
 
-        .left-part {}
+        .intro {
+            padding-top: 60px;
+            padding-left: 100px;
+            margin-bottom: 0; /* 移除底部margin */
+        }
 
         #me {
             width: 100%;
+            height: 100%; /* 让图片填充整个右侧区域 */
+            object-fit: cover;
             background: linear-gradient(to bottom, #6e480252, #c57f0508);
             position: relative;
         }
-
 
         .social {
             display: flex;
@@ -146,13 +181,14 @@
             border-radius: 15px;
             border: 1px white;
             cursor: pointer;
-            transition: background-color 0.3s, transform 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
             position: absolute;
             box-shadow: 0px 5px 26px rgb(150, 150, 150);
         }
 
         .social img:hover {
             transform: scale(1.25);
+            box-shadow: 0px 5px 26px rgb(255, 255, 255);
         }
 
         #ig {
@@ -179,12 +215,6 @@
             font-weight: 300;
         }
 
-        .intro {
-            padding-top: 80px;
-            padding-left: 100px;
-            margin-bottom: 70px;
-        }
-
         #opening {
             display: inline-block;
             font-family: Inter;
@@ -203,8 +233,51 @@
         }
 
         #statistic {
-            padding: 60px 100px;
+            margin-top: auto; /* 将统计部分推到底部 */
+            font-family: Inter;
+            padding: 20px 90px;
             background-color: rgba(0, 0, 0, 0.853);
+            color: white;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+        }
+
+        .statisticitem {
+            font-size: 20px;
+            font-weight: 300;
+            margin-left: 0;
+            padding: 20px 0px 20px 0px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            min-width: 400px;
+        }
+
+        .statisticitem li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            min-width: 300px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .statisticitem li:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .statisticitem li span:first-child {
+            margin-right: 50px;
+        }
+
+        .statisticitem li span:last-child {
+            text-align: right;
         }
 
         .learn {
@@ -226,38 +299,13 @@
             font-weight: 300;
         }
 
-
-        @media (max-width: 780px) {
-            .welcome {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .right-part {
-                display: none;
-            }
-
-            body {
-                background-image: url('bieber1.png'), linear-gradient(to bottom, rgb(241, 240, 240), rgba(110, 89, 1, 0.795));
-                background-size: cover;
-                background-position: center;
-            }
-
-            .left-part {
-                padding: 20px;
-                background-color: rgba(0, 0, 0, 0.271);
-                color: white;
-            }
-            #exhibition{
-                color: white;
-            }
-        }
+        
     </style>
 </head>
 
 <body>
     <div class="header">
-        <strong id="logo">Yihe.C</strong>
+        <strong id="logo">Yihe<strong style="color: rgb(255, 0, 0);">.</strong>C</strong>
         <span class="catalog">
             <span class="option">Home</span>
             <span class="option">Blogs</span>
@@ -299,19 +347,40 @@
                         </li>
                         <li>
                             <strong>Contact</strong><br>
-                            <span>chen61@mcmaster.ca</span>
+                            <a style="font-size: 15px; font-weight: 300;"
+                                href="mailto:chen61@mcmaster.ca">chen61@mcmaster.ca</a>
                         </li>
                     </ul>
                 </div>
             </div>
             <div id="statistic">
-                <a href="https://github.com/Anxile?tab=repositories">
-                    <button class="learn">Learn more</button>
-                </a>
+                <div>
+                    <h2 style="margin-top: 0px;">Statistics</h2>
+                    <a href="https://github.com/Anxile?tab=repositories">
+                        <button class="learn">Learn more</button>
+                    </a>
+                </div>
+                <div>
+                    <ol class="statisticitem">
+                        <li>
+                            <span>Website Design</span><span style="float: right;">99</span>
+                        </li>
+                        <li><span>Mobile App Design</span><span style="float: right;">64</span></li>
+                        <li><span>Brand Identity</span><span style="float: right;">78</span></li>
+                    </ol>
+                </div>
+
+
+
+
+
             </div>
         </div>
         <div class="right-part">
             <img src="bieber1.png" alt="My photo" id="me">
+            <div class="subscription">
+                <div class="confirm"></div>
+            </div>
             <div class="social">
                 <a href="">
                     <img id="ig" src="1_Instagram_colored_svg_1-1024.webp" alt="">
