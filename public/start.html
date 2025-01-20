@@ -8,299 +8,9 @@
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Guides:wght@400..700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Guides:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="portfolio.css">
     <title>sep759</title>
-
-    <style>
-        :root {
-            font-family: Inter, sans-serif;
-            font-feature-settings: 'liga' 1, 'calt' 1;
-            /* fix for Chrome */
-        }
-
-        @supports (font-variation-settings: normal) {
-            :root {
-                font-family: InterVariable, sans-serif;
-            }
-        }
-
-        @media (max-width: 780px) {
-            .welcome {
-                flex-direction: column;
-                text-align: center;
-                text-shadow: 0px 0px 30px rgb(255, 255, 255);
-            }
-
-            .right-part {
-                display: none;
-            }
-
-            body {
-                background-image: url('bieber1.png'), linear-gradient(to bottom, rgb(241, 240, 240), rgba(110, 89, 1, 0.795));
-                background-size: cover;
-                background-position: center;
-            }
-
-            .left-part {
-                padding: 20px;
-                background-color: rgba(0, 0, 0, 0.271);
-                color: white;
-            }
-
-            #exhibition {
-                color: white;
-            }
-        }
-
-        body {
-            margin: 0;
-            /* 移除默认的外边距 */
-            padding: 0;
-            /* 移除默认的内边距 */
-        }
-
-        a {
-            text-decoration: none;
-            color: black;
-            font-weight: 600;
-        }
-
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0px;
-            width: auto;
-            border-bottom: 1px solid rgb(120, 123, 134);
-        }
-
-        .catalog {
-            font-family: "Permanent Marker", serif;
-            font-weight: 700;
-            font-size: larger;
-            justify-content: center;
-        }
-
-
-
-
-        .option {
-            padding: 0px 20px;
-            transition: padding 0.3s, font-size 0.3s;
-        }
-
-        .option:hover {
-            font-size: larger;
-            padding: 0px 25px 7px 25px;
-        }
-
-        #logo {
-            justify-content: left;
-            font-size: xx-large;
-            font-family: 'Courier New', Courier, monospace;
-            position: relative;
-            left: 60px;
-            margin-right: 90px;
-        }
-
-        button {
-            cursor: pointer;
-            justify-content: right;
-            border-color: black;
-            border-width: 1px;
-            padding: 10px 25px;
-            border-radius: 0px;
-            background-color: transparent;
-            transition: background-color 0.3s, transform 0.2s;
-        }
-
-        button:hover {
-            transform: scale(0.98);
-        }
-
-        button:active {
-            transform: scale(0.9);
-        }
-
-
-        .contact {
-            margin-right: 60px;
-        }
-
-        .contact:hover {
-            background-color: black;
-            color: white;
-        }
-
-        .contact:active {
-            background-color: white;
-            color: black;
-        }
-
-        .welcome {
-            display: flex;
-            flex-direction: row;
-            min-height: 100vh; /* 设置最小高度为视口高度 */
-        }
-
-        .left-part,
-        .right-part {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .intro {
-            padding-top: 60px;
-            padding-left: 100px;
-            margin-bottom: 0; /* 移除底部margin */
-        }
-
-        #me {
-            width: 100%;
-            height: 100%; /* 让图片填充整个右侧区域 */
-            object-fit: cover;
-            background: linear-gradient(to bottom, #6e480252, #c57f0508);
-            position: relative;
-        }
-
-        .social {
-            display: flex;
-            flex-direction: column;
-            position: absolute;
-            right: 5px;
-            top: 300px;
-            border: none;
-            border-radius: 20px;
-        }
-
-        .social img {
-            width: 60px;
-            height: 60px;
-            border-radius: 15px;
-            border: 1px white;
-            cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
-            position: absolute;
-            box-shadow: 0px 5px 26px rgb(150, 150, 150);
-        }
-
-        .social img:hover {
-            transform: scale(1.25);
-            box-shadow: 0px 5px 26px rgb(255, 255, 255);
-        }
-
-        #ig {
-            right: 500px;
-        }
-
-        #ln {
-            right: 120px;
-            bottom: 100px;
-        }
-
-        #share {
-            right: 80px;
-            top: 100px;
-        }
-
-        .hire {
-            padding: 15px 30px;
-            background-color: rgb(243, 85, 18);
-            color: white;
-            border: none;
-            font-size: 20px;
-            font-family: Inter;
-            font-weight: 300;
-        }
-
-        #opening {
-            display: inline-block;
-            font-family: Inter;
-            font-weight: 800;
-            font-size: 80px;
-            margin: 0px;
-        }
-
-        #introduction {
-            font-family: Edu AU VIC WA NT Guides;
-            font-weight: 300;
-            font-size: 20px;
-            max-width: 570px;
-            margin-top: 20px;
-            margin-bottom: 40px;
-        }
-
-        #statistic {
-            margin-top: auto; /* 将统计部分推到底部 */
-            font-family: Inter;
-            padding: 20px 90px;
-            background-color: rgba(0, 0, 0, 0.853);
-            color: white;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-            gap: 60px;
-        }
-
-        .statisticitem {
-            font-size: 20px;
-            font-weight: 300;
-            margin-left: 0;
-            padding: 20px 0px 20px 0px;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-            min-width: 400px;
-        }
-
-        .statisticitem li {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            min-width: 300px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .statisticitem li:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-        }
-
-        .statisticitem li span:first-child {
-            margin-right: 50px;
-        }
-
-        .statisticitem li span:last-child {
-            text-align: right;
-        }
-
-        .learn {
-            background: rgb(255, 227, 17);
-        }
-
-        .infolist {
-            margin-top: 70px;
-            padding: 0px;
-            display: flex;
-            flex-direction: row;
-            gap: 60px;
-            list-style-type: none;
-            font-size: 20px;
-        }
-
-        .infolist span {
-            font-size: 15px;
-            font-weight: 300;
-        }
-
-        
-    </style>
 </head>
 
 <body>
@@ -315,13 +25,16 @@
         <a href="https://web.whatsapp.com/">
             <button class="contact">Let's chat</button>
         </a>
+        <div class="pop-up">
+            
+        </div>
     </div>
     <div class="welcome">
         <div class="left-part">
             <div class="intro">
                 <p id="opening">Hi! I Am</p>
                 <button
-                    style="position: relative; bottom: 15px; left:5px; border: none; border-radius: 100px; background: linear-gradient(to right, rgb(195, 0, 212), rgb(38, 38, 255)); color: white; font-weight: 600; font-size: 20px; box-shadow: 0px 4px 15px rgba(6, 29, 237, 0.5);">UI/UX</button>
+                    style="position: relative; bottom: 15px; left:5px; border: none; border-radius: 100px; background: linear-gradient(to right, rgb(195, 0, 212), rgb(38, 38, 255)); color: white; font-weight: 600; font-size: 20px; box-shadow: 0px 4px 15px rgba(6, 29, 237, 0.5);">SEP 759</button>
                 <p id="opening">Yihe Chen</p>
                 <p id="introduction">A student at Mcmaster majoring in system and technology with hands-on experience
                 </p>
@@ -379,7 +92,10 @@
         <div class="right-part">
             <img src="bieber1.png" alt="My photo" id="me">
             <div class="subscription">
-                <div class="confirm"></div>
+                <span>Subscribe my newsletter</span>
+                <button class="confirm">
+                    <div class="arrow-icon"></div>
+                </button>
             </div>
             <div class="social">
                 <a href="">
