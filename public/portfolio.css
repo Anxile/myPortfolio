@@ -333,13 +333,14 @@ button:active {
     }
 
     body {
+        width: fit-content;
         background-image: url('bieber1.png'), linear-gradient(to bottom, rgb(241, 240, 240), rgba(110, 89, 1, 0.795));
         background-size: cover;
         background-position: center;
     }
 
     .left-part {
-        padding: 20px;
+        padding: 0;
         background-color: rgba(0, 0, 0, 0.271);
         color: white;
     }
@@ -515,12 +516,12 @@ button:active {
     }
 
     .timeline::before {
-        left: 20px;
+        display: none;
     }
 
     .timeline-item {
         flex-direction: column;
-        margin-left: 40px;
+    
     }
 
     .timeline-item:nth-child(odd) {
@@ -533,7 +534,7 @@ button:active {
     }
 
     .content {
-        width: 100%;
+        width: auto;
     }
 
     .activities-grid {
