@@ -334,7 +334,7 @@ button:active {
 
     body {
         width: fit-content;
-        background-image: url('bieber1.png'), linear-gradient(to bottom, rgb(241, 240, 240), rgba(110, 89, 1, 0.795));
+        background-image: url('../src/assets/images/bieber1.png'), linear-gradient(to bottom, rgb(241, 240, 240), rgba(110, 89, 1, 0.795));
         background-size: cover;
         background-position: center;
     }
