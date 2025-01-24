@@ -6,6 +6,25 @@
     <link rel="stylesheet" href="../index.css">
     <title>Reach out to me!</title>
     <style>
+        .module {
+            text-align: center;
+            font-size: 30px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* 水平居中所有子元素 */
+            padding: 10% 25%;
+        }
+        label {
+            font-weight: bold;
+            width: 100%; /* 确保标签占满父容器宽度 */
+        }
+        input, textarea {
+            width: 100%; /* 表单控件占满父容器宽度 */
+            margin-bottom: 10px;
+        }
+        
 
     </style>
 </head>
@@ -34,6 +53,7 @@
                 <textarea id="message" name="message" required></textarea>
                 <button type="submit">Submit</button>
             </form>
+        </p>
     </div>
 </body>
 </html>

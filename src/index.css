@@ -53,9 +53,8 @@ a {
     justify-content: left;
     font-size: xx-large;
     font-family: 'Courier New', Courier, monospace;
-    position: relative;
-    left: 60px;
-    margin-right: 90px;
+    
+    margin-left: 60px;
 }
 
 button {
