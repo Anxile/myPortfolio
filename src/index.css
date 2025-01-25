@@ -20,7 +20,6 @@ body {
 a {
     text-decoration: none;
     color: black;
-    font-weight: 600;
 }
 
 .header {
@@ -128,8 +127,8 @@ button:active {
     display: flex;
     flex-direction: column;
     position: absolute;
-    right: 5px;
-    top: 300px;
+    right: 2vw;
+    top: 20vw;
     border: none;
     border-radius: 20px;
 }
@@ -151,17 +150,17 @@ button:active {
 }
 
 #ig {
-    right: 500px;
+    right: 30vw;
 }
 
 #ln {
-    right: 120px;
-    bottom: 100px;
+    right: 6vw;
+    bottom: 5vw;
 }
 
 #share {
-    right: 80px;
-    top: 100px;
+    right: 4vw;
+    top: 8vw;
 }
 
 .hire {
@@ -373,7 +372,7 @@ button:active {
 
 .timeline {
     position: relative;
-    max-width: 1000px;
+    max-width: 90%;
     margin: auto;
 }
 
@@ -487,12 +486,11 @@ button:active {
 }
 
 .activity-card:hover {
-    transform: translateY(-10px) scale(1.09);
+    transform: translateY(-10px) scale(1.09) rotate(2deg); ;
 }
 
 .activity-card img {
-    width: 60px;
-    height: 60px;
+    width: 100%;
     margin-bottom: 20px;
 }
 
