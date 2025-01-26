@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,24 +11,36 @@
             text-align: center;
             font-size: 30px;
         }
+
         form {
             display: flex;
             flex-direction: column;
-            align-items: center; /* 水平居中所有子元素 */
+            align-items: center;
+            /* 水平居中所有子元素 */
             padding: 10% 25%;
         }
+
         label {
             font-weight: bold;
-            width: 100%; /* 确保标签占满父容器宽度 */
+            width: 100%;
+            /* 确保标签占满父容器宽度 */
         }
-        input, textarea {
-            width: 100%; /* 表单控件占满父容器宽度 */
+
+        input,
+        textarea {
+            width: 100%;
+            /* 表单控件占满父容器宽度 */
             margin-bottom: 10px;
         }
-        
 
+        @media (max-width: 1500px) {
+            body {
+                background-image: none;
+            }
+        }
     </style>
 </head>
+
 <body>
     <header class="header">
         <strong id="logo">Yihe<strong style="color: rgb(255, 0, 0);">.</strong>C</strong>
@@ -45,17 +58,18 @@
         <section>
             <p class="module">
                 <strong>Reach out to me!</strong>
-                <form action="" method="post">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" required></textarea>
-                    <button type="submit">Submit</button>
-                </form>
+            <form action="" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
             </p>
         </section>
     </main>
 </body>
+
 </html>
