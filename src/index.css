@@ -519,6 +519,10 @@ button:active {
         background-color: #fff;
     }
 
+    .header button{
+        color: black;
+    }
+
 
     .right-part {
         overflow: hidden;
@@ -545,8 +549,23 @@ button:active {
     }
 
     #statistic {
-        margin-top: 10%;
-        
+        font-size: 4vw;
+        flex-direction: column;
+        gap: 10%;
+        padding: 20px 0px;
+    }
+
+    .learn{
+        color: black;
+        font-size: 3.8vw;
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        margin: 0 auto; /* Ensure it's centered within its container */
+    }
+
+    .statisticitem{
+        font-size: 3vw;
     }
 
     .infolist {
@@ -557,29 +576,44 @@ button:active {
         margin-top: 2%;
         color: white;
         text-align: center;
+        font-size: 4vw; /* 调整小屏幕下的字体大小 */
     }
 
     .intro {
+        padding: 10%;
         text-align: center;
-        /* 调整小屏幕下的字体大小 */
+        font-size: 4vw; /* 调整小屏幕下的字体大小 */
     }
 
     #opening {
-        font-size: 6vw;
+        font-size: 13vw;
     }
 
     #introduction {
-        font-size: 2.5vw;
+        max-width: 100%;
+        font-size: 4.5vw;
+        /* 调整小屏幕下的字体大小 */
+    }
+
+    .hire {
+        font-size: 5vw;
+        padding: 2.5% 5.5%;
         /* 调整小屏幕下的字体大小 */
     }
 
     #hirebutton {
+        font-size: 9vw;
         display: flex;
         flex-direction: column;
     }
 
+    .infolist strong, .infolist span {
+        font-size: 3vw; /* 调整小屏幕下的字体大小 */
+    }
+
     #email{
         color: white;
+        font-size: 3vw; /* 调整小屏幕下的字体大小 */
     }
 }
 
@@ -608,10 +642,12 @@ button:active {
     .date {
         width: auto;
         margin-bottom: 20px;
+        font-size: 2vw; /* 调整小屏幕下的字体大小 */
     }
 
     .content {
         width: auto;
+        font-size: 2vw; /* 调整小屏幕下的字体大小 */
     }
 
     .activities-grid {
