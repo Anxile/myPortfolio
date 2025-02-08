@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Alert from "./components/alert";
+import Alert from "./components/Alert";
 import "bootstrap/dist/css/bootstrap.min.css";
 function App() {
   const [altervisible, setalertvisibility] = useState(false);
