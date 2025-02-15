@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../app/assets/stylesheets/index.css">
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Guides:wght@400..700&display=swap" rel="stylesheet">
+    <title>This's Yihe Chen!</title>
+</head>
+
+<body>
+    <header class="header">
+        <strong id="logo">Yihe<strong style="color: rgb(255, 0, 0);">.</strong>C</strong>
+        <span class="catalog">
+            <a class="option" href="index.html">Home</a>
+            <%= link_to 'Blogs',blogs_show_path,class:'option'%>
+            <a class="option" href="../src/pages/resume.html">Resume</a>
+            <a class="option">FAQ</a>
+        </span>
+        <a href="../src/pages/contact.html">
+            <button class="contact">Let's chat</button>
+        </a>
+    </header>
+    <main class="welcome">
+        <section class="left-part">
+            <div class="intro">
+                <p id="opening">Hi! I Am</p>
+                <button id="coursename">SEP 759</button>
+                <br><p id="opening">Yihe Chen</p>
+                <p id="introduction">A student at Mcmaster majoring in system and technology with hands-on experience
+                </p>
+                <div id="hirebutton" style="margin-top: 10%">
+                    <a href="https://www.linkedin.com/in/onebox-chen/">
+                        <button class="hire">Hire Me</button>
+                    </a>
+                    <a id="exhibition" href="https://github.com/Anxile?tab=repositories" target="_blank" style="margin-left: 3%;">Projects &#8594;</a>
+                </div>
+                <div class="baseinfo">
+                    <ul class="infolist">
+                        <li>
+                            <strong>Gender</strong><br>
+                            <span>male</span>
+                        </li>
+                        <li>
+                            <strong>Skills</strong><br>
+                            <span>Programming, testing, managing</span>
+                        </li>
+                        <li>
+                            <strong>Contact</strong><br>
+                            <a id="email"
+                                href="mailto:chen61@mcmaster.ca">chen61@mcmaster.ca</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="statistic">
+                <div class="learnbutton">
+                    <h2 style="margin-top: 0px;">Academics</h2>
+                    <a href="https://github.com/Anxile?tab=repositories">
+                        <button class="learn">Learn more</button>
+                    </a>
+                </div>
+                <div>
+                    <ol class="statisticitem">
+                        <li>
+                            <span>Advanced Robotics & Automation</span><span style="float: right;">A+</span>
+                        </li>
+                        <li><span>Leadership for Innovation</span><span style="float: right;">A+</span></li>
+                        <li><span>Machine Learning</span><span style="float: right;">A</span></li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+        <aside class="right-part">
+            <img src="../src/assets/images/bieber2.png" alt="My photo" id="me">
+            <div class="subscription">
+                <span style="font-size: 1vw;">Subscribe my newsletter</span>
+                <button class="confirm">
+                    <div class="arrow-icon"></div>
+                </button>
+            </div>
+            <div class="social">
+                <a href="https://www.instagram.com/">
+                    <img id="ig" src="../src/assets/images/1_Instagram_colored_svg_1-1024.webp" alt="">
+                </a>
+                <a href="https://www.linkedin.com/in/onebox-chen/">
+                    <img id="ln" src="../src/assets/images/1656996524linkedin-app-icon.webp" alt="">
+                </a>
+                <a id="copyButton">
+                    <img id="share" src="../src/assets/images/share.png" alt="">
+                </a>
+
+                <script>
+                    document.getElementById('copyButton').addEventListener('click', function () {
+                        const link = 'https://www.linkedin.com/in/onebox-chen/';
+
+                        // 创建一个临时的文本输入框
+                        const tempInput = document.createElement('input');
+                        tempInput.value = link;
+                        document.body.appendChild(tempInput);
+
+                        // 选中文本并复制
+                        tempInput.select();
+                        document.execCommand('copy');
+
+                        // 移除临时输入框
+                        document.body.removeChild(tempInput);
+
+                        alert('Link copied to clipboard!');
+                    });
+
+                </script>
+            </div>
+        </aside>
+    </main>
+    <section class="career-section">
+        <div class="section-header">
+            <h1>Career Path</h1>
+            <p class="subtitle">My professional journey and experience</p>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="date">2024 - Present</div>
+                <div class="content">
+                    <h3>Msater Student</h3>
+                    <p>McMaster University</p>
+                    <ul>
+                        <li>Working on a project engaging in securing users' privacy</li>
+                        <li>Enrolled in SEP759 to gain knowledge of web development, accumulate hands-on experience through designing and developing a portfolio website</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="date">2022 - 2023</div>
+                <div class="content">
+                    <h3>Software Development Intern</h3>
+                    <p>Accenture</p>
+                    <ul>
+                        <li>Developed and maintained Java-based middleware components with the team, enabling efficient communication and security between the cloud and clients.</li>
+                        <li>Drafted comprehensive test plans and designed test cases to validate the components' functionality, reliability, and quality, utilizing debug tools such as SAP Cockpit and Postman to verify the performance to secure seamless integration with other applications.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills-section">
+        <div class="section-header">
+            <h1>Skills & Expertise</h1>
+            <p class="subtitle">Technologies I work with</p>
+        </div>
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3>Frontend</h3>
+                <div class="skill-items">
+                    <div class="skill-item">
+                        <div class="skill-name">React</div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 20%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">Vue.js</div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 65%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>Backend</h3>
+                <div class="skill-items">
+                    <div class="skill-item">
+                        <div class="skill-name">Node.js</div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 50%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">Java</div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 70%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="extracurricular-section">
+        <div class="section-header">
+            <h1>Extracurricular Activities</h1>
+            <p class="subtitle">Beyond the classroom</p>
+        </div>
+        <div class="activities-grid">
+            <a href="https://en.wikipedia.org/wiki/CN_Tower">
+                <div class="activity-card">
+                    <img src="../src/assets/images/5f00d992001aca9d8a70fe18f6f75478.jpg" alt="">
+                    <h3>Toronto CN Tower</h3>
+                    <p>The CN Tower is a 553.3 m-high communications and observation tower in Toronto, Completed in 1976. it is located in downtown Toronto, built on the former Railway Lands.</p>
+                </div>
+            </a>
+            
+            <a href="https://en.wikipedia.org/wiki/Niagara-on-the-Lake">
+                <div class="activity-card">
+                    <img src="../src/assets/images/2f01c5f37f8cf707219503111c857b02.jpg" alt="">
+                    <h3>Town of Niagara-on-the-Lake</h3>
+                    <p>Niagara-on-the-Lake is a town in Ontario, Canada. It is located on the Niagara Peninsula at the point where the Niagara River meets Lake Ontario, across the river from New York, United States.</p>
+                </div>
+            </a>
+            
+            <a href="https://en.wikipedia.org/wiki/North_York">
+                <div class="activity-card">
+                    <img src="../src/assets/images/7c11d6b5ca116a5d0e3eeb2e0b7955b4.jpg" alt="">
+                    <h3>North York</h3>
+                    <p>North York is a former township and city and is now one of the six administrative districts of Toronto, Ontario, Canada. It is located in the northern area of Toronto, centred around Yonge Street.</p>
+                </div>
+            </a>
+            
+        </div>
+    </section>
+
+    <footer class="resume"></footer>
+</body>
+
+</html>
