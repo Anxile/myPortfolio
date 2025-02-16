@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  get 'blogs/show'
   root "pages#home"
+
+  resources :blogs, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   get 'greeter', to:'greeter#hello'
   get 'greeter/goodbye', to:'greeter#goodbye'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

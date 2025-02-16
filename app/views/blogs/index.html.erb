@@ -2,11 +2,26 @@
         <strong id="logo">Yihe<strong style="color: rgb(255, 0, 0);">.</strong>C</strong>
         <span class="catalog">
             <a class="option" href="index.html">Home</a>
-            <%= link_to 'Blogs',blogs_show_path,class:'option'%>
+            <%= link_to 'Blogs',blogs_path,class:'option'%>
             <a class="option" href="../src/pages/resume.html">Resume</a>
             <a class="option">FAQ</a>
         </span>
         <a href="../src/pages/contact.html">
             <button class="contact">Let's chat</button>
         </a>
-    </header>
+</header>
+
+
+<section class="content">
+    <div class="blog">
+        <h1>Blog</h1>
+        <div class="blog-list">
+            <% @blogs.each do |blog| %>
+                <div class="blog-item">
+                    <h2><%= blog["title"]%></h2>
+                    <p><%= blog["abstract"] %></p>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</section>
