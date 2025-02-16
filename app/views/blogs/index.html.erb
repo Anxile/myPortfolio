@@ -20,6 +20,9 @@
                 <div class="blog-item">
                     <h2><%= blog["title"]%></h2>
                     <p><%= blog["abstract"] %></p>
+                    
+                    <%= image_tag(blog["multimedia"][0]["url"]) %>
+
                 </div>
             <% end %>
         </div>
