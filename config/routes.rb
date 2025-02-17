@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root "pages#home"
+  get 'resume', to:'resume#index'
+  root "home#index"
 
   resources :blogs, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   get 'greeter', to:'greeter#hello'

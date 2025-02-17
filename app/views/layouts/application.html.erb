@@ -10,7 +10,18 @@
   </head>
 
   <body>
-  
+    <header class="header">
+      <strong id="logo">Yihe<strong style="color: rgb(255, 0, 0);">.</strong>C</strong>
+      <span class="catalog">
+          <%= link_to 'Home',root_path,class:'option'%>
+          <%= link_to 'Blogs',blogs_path,class:'option'%>
+          <%= link_to 'Resume',resume_path,class:'option'%>
+          <a class="option">FAQ</a>
+      </span>
+      <a href="../src/pages/contact.html">
+          <button class="contact">Let's chat</button>
+      </a>
+    </header>
     <%= yield %>
   </body>
 </html>
