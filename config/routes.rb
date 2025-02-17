@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'resume', to:'resume#index'
   root "home#index"
 
-  resources :blogs, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+  resources :blogs, only: [:index, :show]
   get 'greeter', to:'greeter#hello'
   get 'greeter/goodbye', to:'greeter#goodbye'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
