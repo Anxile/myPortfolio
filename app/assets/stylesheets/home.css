@@ -38,12 +38,12 @@ a {
     justify-content: center;
 }
 
-.option {
+#header_option {
     padding: 0px 20px;
     transition: padding 0.3s, font-size 0.3s;
 }
 
-.option:hover {
+#header_option:hover {
     font-size: larger;
     padding: 0px 25px 7px 25px;
 }

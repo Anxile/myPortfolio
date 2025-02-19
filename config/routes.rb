@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  get 'resume', to:'resume#index'
   root "home#index"
+  get 'resume', to:'resume#index'
+  
 
   resources :blogs, only: [:index, :show]
   get 'greeter', to:'greeter#hello'

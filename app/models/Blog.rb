@@ -9,13 +9,13 @@ class Blog
   def self.get_blogs
     uri = URI("#{BASE_URL}/topstories/v2/world.json?api-key=#{API_KEY}")
     
-    response = Net::HTTP.get(uri) # 发送 GET 请求
-    JSON.parse(response) # 解析 JSON 响应
+    response = Net::HTTP.get(uri)
+    JSON.parse(response)
   end
 
   def self.search_blogs(item)
     uri = URI("#{BASE_URL}/topstories/v2/#{item}.json?api-key=#{API_KEY}")
-    response = Net::HTTP.get(uri) # 发送 GET 请求
-    JSON.parse(response) # 解析 JSON 响应
+    response = Net::HTTP.get(uri)
+    JSON.parse(response)
   end
 end
