@@ -3,7 +3,7 @@ class BlogsController < ApplicationController
 
   def index
     if params[:category].present?
-      response = Blog.search_blogs(params[:category])
+      response = Blog.get_blogs(params[:category])
     else
       response = Blog.get_blogs
     end
