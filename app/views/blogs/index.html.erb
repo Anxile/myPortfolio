@@ -21,7 +21,7 @@
         <h5 class="card-title"><%= blog["title"] %></h5>
         <p class="card-text"><%= blog["abstract"] %></p>
         <!-- 生成详情页链接，用 Blog.generate_id(blog["title"]) 作为 id -->
-        <%= link_to "Read", blog_path(generate_id(blog["title"])), class: "btn btn-primary" %>
+        <%= link_to "Read", blog_path(category: params[:category], id: generate_id(blog["title"])), class: "btn btn-primary" %>
       </div>
     </div>
   <% end %>
