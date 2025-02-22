@@ -1,21 +1,28 @@
-<% @available_keyword.each do |keyword| %>
-    <span id="category", class="badge text-bg-light"><%= link_to keyword, blog_path(keyword)%></span>
-<% end %>
+<!-- 显示分类选项 -->
+<div id="categories">
+  <% @available_keyword.each do |keyword| %>
+    <span class="badge text-bg-light">
+      <%= link_to keyword, blogs_path(category: keyword), class: "option" %>
+    </span>
+  <% end %>
+</div>
 
+<!-- 文章列表 -->
 <section class="content">
-    <% @blogs.each do |blog| %>
-        <div class="card" style="width: 28rem;">
-        <% if blog["multimedia"].present? %>
-            <% preferred_image = blog["multimedia"].find { |img| img["format"] == "Super Jumbo" } || blog["multimedia"].last %>
-            <%= image_tag(preferred_image["url"], alt: preferred_image["caption"], class: "responsive-img") %>
-        <% else %>
-            <h1>No result</h1>
-        <% end %>
-            <div class="card-body">
-                <h5 class="card-title"><%= blog["title"]%></h5>
-                <p class="card-text"><%= blog["abstract"] %></p>
-                <a href="#" class="btn btn-primary">Read</a>
-            </div>
-        </div>   
-    <% end %>
+  <% @blogs.each do |blog| %>
+    <div class="card" style="width: 28rem;">
+      <% if blog["multimedia"].present? %>
+        <% preferred_image = blog["multimedia"].find { |img| img["format"] == "Super Jumbo" } || blog["multimedia"].last %>
+        <%= image_tag(preferred_image["url"], alt: preferred_image["caption"], class: "responsive-img") %>
+      <% else %>
+        <h1>No result</h1>
+      <% end %>
+      <div class="card-body">
+        <h5 class="card-title"><%= blog["title"] %></h5>
+        <p class="card-text"><%= blog["abstract"] %></p>
+        <!-- 生成详情页链接，用 Blog.generate_id(blog["title"]) 作为 id -->
+        <%= link_to "Read", blog_path(generate_id(blog["title"])), class: "btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
 </section>
