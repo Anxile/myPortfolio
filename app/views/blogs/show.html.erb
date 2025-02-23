@@ -6,7 +6,6 @@
     <%= image_tag(preferred_image["url"], alt: preferred_image["caption"], class: "responsive-img") %>
   <% end %>
   <div class="content">
-    <p><!-- 具体文章内容展示 --></p>
   </div>
   <%= link_to 'Back', blogs_path(category: params[:category]), class: "btn btn-secondary" %>
 <% else %>

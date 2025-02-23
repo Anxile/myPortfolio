@@ -11,7 +11,6 @@ class BlogsController < ApplicationController
   end
 
   def show
-    # 使用 RESTful 方式，params[:id] 为 URL 中的动态参数
     @blog = Blog.show_detail(params[:category] || 'world',params[:id])
     if @blog.nil?
       flash[:alert] = "Article not found."
