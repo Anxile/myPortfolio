@@ -17,6 +17,7 @@ class Blog
     blogs = response["results"]
     blogs.find { |blog| generate_id(blog["title"]) == id }
   end
+
   def self.generate_id(title)
     Digest::MD5.hexdigest(title)
   end

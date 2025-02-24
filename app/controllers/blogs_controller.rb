@@ -8,13 +8,17 @@ class BlogsController < ApplicationController
       response = Blog.get_blogs
     end
     @blogs = response["results"]
+    if @blogs.nil?
+      flash[:alert] = "Article not found."
+      redirect_to blogs_error_path
+    end
   end
 
   def show
     @blog = Blog.show_detail(params[:category] || 'world',params[:id])
     if @blog.nil?
       flash[:alert] = "Article not found."
-      redirect_to blogs_path(category: params[:category])
+      redirect_to blogs_error_path
     end
   end
 
