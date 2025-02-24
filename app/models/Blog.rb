@@ -15,6 +15,7 @@ class Blog
   def self.show_detail(category, id)
     response = get_blogs(category)
     blogs = response["results"]
+    return nil if blogs.nil?
     blogs.find { |blog| generate_id(blog["title"]) == id }
   end
 
