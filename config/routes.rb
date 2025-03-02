@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   resources :blogs, only: [:index, :show]
   get 'greeter', to:'greeter#hello'
   get 'greeter/goodbye', to:'greeter#goodbye'
+  get 'match', to:'match#index'
+  post 'match', to:'match#find'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

@@ -14,7 +14,7 @@
   <% else %>
     <%= stylesheet_link_tag "application", media: "all" %>
   <% end %>
-
+      <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
   </head>
 
   <body>
@@ -24,7 +24,7 @@
           <%= link_to 'Home',root_path,id:'header_option'%>
           <%= link_to 'Blogs',blogs_path,id:'header_option'%>
           <%= link_to 'Resume',resume_path,id:'header_option'%>
-          <a id="header_option">FAQ</a>
+          <%= link_to 'Match', match_path, id:'header_option'%>
       </span>
       <a href="../src/pages/contact.html">
           <button class="contact">Let's chat</button>
