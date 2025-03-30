@@ -30,6 +30,13 @@
           <button class="contact">Let's chat</button>
       </a>
     </header>
+    <%if is_loggedin?%>
+      <div class="user" style="float: right; margin-right: 20px;">
+        <p>Welcome! <%= current_user[:name] %></p>
+        <%= link_to "logout", logout_path, id: "logout" %>
+      </div>
+    <%end%>
+
     <%= yield %>
   </body>
 </html>
