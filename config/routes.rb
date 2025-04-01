@@ -21,4 +21,9 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  namespace :api, default: {format: 'json'} do
+    get 'users/search', to:'users#search'
+    resources :blogs
+  end
 end
