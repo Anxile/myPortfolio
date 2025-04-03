@@ -13,4 +13,7 @@ class PostsController < ApplicationController
     def create
         @post = Post.create(title: params[:post][:title], content: params[:post][:content], user_id: current_user.id)
     end
+
+    def upload_image
+    end
 end

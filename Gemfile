@@ -2,6 +2,9 @@ source "https://rubygems.org"
 
 ruby "3.3.7"
 gem "bcrypt"
+gem 'bootstrap', '~> 5.3.3'
+gem 'jquery-rails'
+gem 'google-apis-drive_v3'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.5", ">= 7.1.5.1"
@@ -41,8 +44,6 @@ gem "tzinfo-data"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
-
-gem 'bootstrap', '~> 5.3.3'
 
 gem 'sassc-rails'
 
