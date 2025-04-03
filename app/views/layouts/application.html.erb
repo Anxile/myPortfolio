@@ -26,17 +26,19 @@
           <%= link_to 'Resume',resume_path,id:'header_option'%>
           <%= link_to 'Match', match_path, id:'header_option'%>
       </span>
-      <a href="../src/pages/contact.html">
-          <button class="contact">Let's chat</button>
-      </a>
+      <% if is_loggedin? %>
+        <div>
+          <p>Welcome! <%= current_user[:name] %></p>
+          <a href="<%= logout_path %>" id="logout">
+            <button class="contact">logout</button>
+          </a>
+        </div>
+      <% else %>
+        <a href="<%= login_path %>" id="login">
+            <button class="contact">login</button>
+          </a>
+      <% end %>
     </header>
-    <%if is_loggedin?%>
-      <div class="user" style="float: right; margin-right: 20px;">
-        <p>Welcome! <%= current_user[:name] %></p>
-        <%= link_to "logout", logout_path, id: "logout" %>
-      </div>
-    <%end%>
-
-    <%= yield %>
+ <%= yield %>
   </body>
 </html>
