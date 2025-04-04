@@ -1,5 +1,5 @@
 <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
-  <%= render "form", post: @post %>
+  
   <% @posts.each do |post| %>
     <div class="card" style="width: 18rem;">
       <% if post.instance_variable_get(:@file_metadata) %>
@@ -12,4 +12,5 @@
       </div>
     </div>
   <% end %>
+  <%= render "form", post: @post %>
 </div>

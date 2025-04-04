@@ -1,19 +1,28 @@
-<div style="display: flex; flex-direction:column; justify-content:center; align-items:center">
+<div class="container mt-5">
+  <div class="text-center">
+    <p class="text-success"><%= notice %></p>
+    <h1 class="mb-4">Users</h1>
+  </div>
 
-<p style="color: green"><%= notice %></p>
+  <div class="row">
+    <% @users.each do |user| %>
+      <div class="col-md-4 mb-4">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title"><%= user.name %></h5>
+            <p class="card-text">
+              Email: <%= user.mail %><br>
+              Status: <%= Status.find_by(user_id: user.id)&.status || "Unknown" %>
+            </p>
+            <%= link_to "Show this user", user, class: "btn btn-primary btn-sm" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 
-<h1>Users</h1>
-
-<div id="users">
-  <% @users.each do |user| %>
-    <%= render user %>
-    <p>
-      <%= link_to "Show this user", user %>
-    </p>
-  <% end %>
-</div>
-
-<%= link_to "New user", new_user_path %>
-
-<%= link_to "logout", logout_path %>
+  <div class="text-center mt-4">
+    <%= link_to "New User", new_user_path, class: "btn btn-success" %>
+    <%= link_to "Logout", logout_path, class: "btn btn-danger" %>
+  </div>
 </div>

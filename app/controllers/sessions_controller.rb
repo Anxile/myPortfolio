@@ -7,7 +7,6 @@ class SessionsController < ApplicationController
   def create
     user_params = params.require(:user).permit(:name, :password, :status)
     user = User.find_by(name: user_params[:name])
-    @@user = user
   
     if user && user.authenticate(user_params[:password])
       session[:user_id] = user.id

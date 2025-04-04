@@ -1,19 +1,39 @@
-<div style="display: flex; flex-direction:column; justify-content:center; align-items:center">
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow-sm">
+        <div class="card-header text-center">
+          <h1>Login</h1>
+        </div>
+        <div class="card-body">
+          <%= form_with(model: User.new, url: sessions_path, class: "needs-validation") do |f| %>
+            <div class="mb-3">
+              <%= f.label :name, class: "form-label" %>
+              <%= f.text_field :name, class: "form-control", placeholder: "Enter your name" %>
+            </div>
+            <div class="mb-3">
+              <%= f.label :password, class: "form-label" %>
+              <%= f.password_field :password, class: "form-control", placeholder: "Enter your password" %>
+            </div>
+            <div class="mb-3">
+              <%= f.label :status, "Select your status", class: "form-label d-block" %>
+              <div class="btn-group" role="group" aria-label="Status">
+                <%= f.radio_button :status, "Available", id: "status_available", class: "btn-check" %>
+                <%= label_tag "status_available", "🟢 Available", class: "btn btn-outline-success" %>
 
-<h1>Login</h1>
+                <%= f.radio_button :status, "Busy", id: "status_busy", class: "btn-check" %>
+                <%= label_tag "status_busy", "🔴 Busy", class: "btn btn-outline-danger" %>
 
-<%= form_with(model: User.new, url: sessions_path) do |f| %>
-  <div class="field">
-    <%= f.label :name %> <br/> <%= f.text_field :name %>
+                <%= f.radio_button :status, "Appear Offline", id: "status_offline", class: "btn-check" %>
+                <%= label_tag "status_offline", "⚪ Appear Offline", class: "btn btn-outline-secondary" %>
+              </div>
+            </div>
+            <div class="d-grid">
+              <%= f.submit 'Login', class: "btn btn-primary btn-block" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :password %> <br/> <%= f.password_field :password %>
-  </div>
-  <div>
-    <%= f.label :status, style: "display: block" %>
-    <%= f.select :status, ['Available', 'Busy', 'Appear Offline'], prompt: "Select status" %>
-  </div>
-  <div class="actions"><%= f.submit 'Login' %></div>
-<% end %>
-
 </div>

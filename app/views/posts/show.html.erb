@@ -16,7 +16,7 @@
         <div class="card mb-3">
           <div class="card-body">
             <p class="card-text"><%= comment.content %></p>
-            <small class="text-muted">Posted by <%= User.find_by(id: comment.user_id).name%> on <%= comment.created_at.strftime('%Y-%m-%d %H:%M:%S') %>, status: <%= Status.find_by(user_id: comment.user_id).status  %></small>
+            <small class="text-muted">Posted by <%= User.find_by(id: comment.user_id).name%> on <%= comment.created_at.strftime('%Y-%m-%d %H:%M:%S') %>, status: <%= Status.find_by(user_id: comment.user_id)&.status ||"Unknown" %></small>
           </div>
         </div>
       <% end %>
