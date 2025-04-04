@@ -28,6 +28,13 @@
   </div>
 
   <div>
+  <%= form.label :status, style: "display: block" %>
+  <%= form.select :status, ['online', 'offline'], prompt: 'Select status' %>
+  <%= form.hidden_field :status, value: 'offline' %>
+  </div>
+
+
+  <div>
     <%= form.submit %>
   </div>
 <% end %>

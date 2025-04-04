@@ -3,17 +3,17 @@
 <h1>Login</h1>
 
 <%= form_with(model: User.new, url: sessions_path) do |f| %>
-<div class="field">
-<%= f.label :name %> <br/> <%= f.text_field :name %>
-</div>
-<div class="field">
-<%= f.label :password %> <br/> <%= f.password_field :password %>
-</div>
-  <div>
-    <%= f.label :mail, style: "display: block" %>
-    <%= f.email_field :mail %>
+  <div class="field">
+    <%= f.label :name %> <br/> <%= f.text_field :name %>
   </div>
-<div class="actions"><%= f.submit 'Login' %></div>
+  <div class="field">
+    <%= f.label :password %> <br/> <%= f.password_field :password %>
+  </div>
+  <div>
+    <%= f.label :status, style: "display: block" %>
+    <%= f.select :status, ['Available', 'Busy', 'Appear Offline'], prompt: "Select status" %>
+  </div>
+  <div class="actions"><%= f.submit 'Login' %></div>
 <% end %>
 
 </div>

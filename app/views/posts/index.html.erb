@@ -1,15 +1,14 @@
 <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+  <%= render "form", post: @post %>
   <% @posts.each do |post| %>
     <div class="card" style="width: 18rem;">
-      <% if post.respond_to?(:file_metadata) && post.file_metadata.present? %>
-        <img src="<%= post.file_metadata.thumbnail_link %>" alt="<%= post.file_metadata.name %>">
+      <% if post.instance_variable_get(:@file_metadata) %>
+        <img src="<%= post.instance_variable_get(:@file_metadata).thumbnail_link %>" alt="<%= post.instance_variable_get(:@file_metadata).name %>">
       <% end %>
       <div class="card-body">
         <h5 class="card-title"><%= post.title %></h5>
         <p class="card-text"><%= post.content %></p>
-        <% if post.respond_to?(:file_metadata) && post.file_metadata.present? %>
-          <a href="<%= post.file_metadata.web_view_link %>" class="btn btn-primary" target="_blank">View on Google Drive</a>
-        <% end %>
+        <%= link_to 'View this post', post_path(post.id), class: 'btn btn-primary' %>
       </div>
     </div>
   <% end %>

@@ -7,26 +7,31 @@ class PostsController < ApplicationController
   begin
     scopes = [Google::Apis::DriveV3::AUTH_DRIVE]
     authorizer = Google::Auth.get_application_default(scopes)
-
+    Rails.logger.info "Authorizer: #{authorizer.inspect}"
+  
     @@drive = Google::Apis::DriveV3::DriveService.new
     @@drive.authorization = authorizer
+    Rails.logger.info "Drive Service Initialized: #{@@drive.inspect}"
   rescue StandardError => e
     Rails.logger.error "Google Drive API initialization failed: #{e.message}"
     @@drive = nil
   end
 
   def index
+    @post = Post.new
     @posts = Post.all
-
+  
     if @@drive
       @posts.each do |post|
         if post.image_url.present?
           begin
+            Rails.logger.info "Fetching metadata for Post ID: #{post.id}, Image URL: #{post.image_url}"
             file_metadata = @@drive.get_file(
               post.image_url,
               fields: 'id, name, mime_type, web_view_link, thumbnail_link'
             )
-            post.define_singleton_method(:file_metadata) { file_metadata }
+            post.instance_variable_set(:@file_metadata, file_metadata)
+            Rails.logger.info "File Metadata: #{file_metadata.inspect}"
           rescue Google::Apis::ClientError => e
             Rails.logger.error "Failed to fetch file metadata for #{post.image_url}: #{e.message}"
           end
@@ -38,8 +43,21 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find_by(params[:id])
+    @post = Post.find_by(id: params[:id])
     @comments = Comment.where(post_id: @post.id)
+
+    if @@drive && @post.image_url.present?
+      begin
+        file_metadata = @@drive.get_file(
+          @post.image_url,
+          fields: 'id, name, mime_type, web_view_link, thumbnail_link'
+        )
+        @post.define_singleton_method(:file_metadata) { file_metadata }
+      rescue Google::Apis::ClientError => e
+        Rails.logger.error "Failed to fetch file metadata for #{@post.image_url}: #{e.message}"
+      end
+    end
+    
   end
 
   def new

@@ -1,7 +1,7 @@
 <div class="container mt-5">
   <div class="card" style="width: 100%; max-width: 800px; margin: 0 auto;">
     <% if @post.respond_to?(:file_metadata) && @post.file_metadata.present? %>
-      <img src="<%= @post.file_metadata.thumbnail_link %>" alt="<%= @post.file_metadata.name %>" class="card-img-top">
+      <img src="<%= @post.file_metadata.thumbnail_link %>" class="card-img-top" alt="<%= @post.file_metadata.name %>">
     <% end %>
     <div class="card-body">
       <h2 class="card-title"><%= @post.title %></h2>
@@ -16,7 +16,7 @@
         <div class="card mb-3">
           <div class="card-body">
             <p class="card-text"><%= comment.content %></p>
-            <small class="text-muted">Posted by <%= comment.user.name %> on <%= comment.created_at.strftime('%Y-%m-%d %H:%M:%S') %></small>
+            <small class="text-muted">Posted by <%= User.find_by(id: comment.user_id).name%> on <%= comment.created_at.strftime('%Y-%m-%d %H:%M:%S') %>, status: <%= Status.find_by(user_id: comment.user_id).status  %></small>
           </div>
         </div>
       <% end %>
