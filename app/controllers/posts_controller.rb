@@ -2,6 +2,8 @@ class PostsController < ApplicationController
   require 'google/apis/drive_v3'
   require 'googleauth'
 
+  skip_before_action :ensure_user_logged_in
+
   begin
     scopes = [Google::Apis::DriveV3::AUTH_DRIVE]
     authorizer = Google::Auth.get_application_default(scopes)
