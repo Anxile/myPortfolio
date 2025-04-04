@@ -7,6 +7,7 @@ gem 'jquery-rails'
 gem 'google-apis-drive_v3'
 gem 'googleauth'
 gem 'dotenv-rails', groups: [:development, :test]
+gem 'pg'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.5", ">= 7.1.5.1"
@@ -72,4 +73,8 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
+end
+
+group :production do
+  gem 'pg'
 end

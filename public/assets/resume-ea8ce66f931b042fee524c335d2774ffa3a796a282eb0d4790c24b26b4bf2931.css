@@ -1,0 +1,111 @@
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0px;
+    width: auto;
+    border-bottom: 1px solid rgb(120, 123, 134);
+}
+
+.catalog {
+    font-family: "Permanent Marker", serif;
+    font-weight: 700;
+    font-size: larger;
+    justify-content: center;
+}
+
+#header_option {
+    padding: 0px 20px;
+    transition: padding 0.3s, font-size 0.3s;
+}
+
+#header_option:hover {
+    font-size: larger;
+    padding: 0px 25px 7px 25px;
+}
+
+#logo {
+    justify-content: left;
+    font-size: xx-large;
+    font-family: 'Courier New', Courier, monospace;
+
+    margin-left: 60px;
+}
+
+button {
+    cursor: pointer;
+    justify-content: right;
+    border-color: black;
+    border-width: 1px;
+    padding: 10px 25px;
+    border-radius: 0px;
+    background-color: transparent;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    transform: scale(0.98);
+}
+
+button:active {
+    transform: scale(0.9);
+}
+
+.contact {
+    margin-right: 60px;
+}
+
+.contact:hover {
+    background-color: black;
+    color: white;
+}
+
+.contact:active {
+    background-color: white;
+    color: black;
+}
+
+.resume {
+    padding: 5% 25%;
+}
+
+.title {
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+}
+
+.name {
+    font-size: 2em;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.contact1 {
+    font-size: 1em;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.subtitle {
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+    border-bottom: solid 1px black;
+}
+
+.experience {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width: 1500px) {
+    body {
+        background-image: none;
+    }
+    .resume {
+        padding: 5% 2%;
+    }
+}
