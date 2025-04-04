@@ -17,16 +17,13 @@ class PostsController < ApplicationController
     def index
         @posts = Post.all
       
-        # 获取每个文件的元数据（如文件名、下载链接等）
         @posts.each do |post|
           if post.image_url.present?
             begin
-              # 获取文件元数据
               file_metadata = @@drive.get_file(
                 post.image_url,
                 fields: 'id, name, mime_type, web_view_link, thumbnail_link'
               )
-              # 将元数据存储到 post 的实例变量中
               post.define_singleton_method(:file_metadata) { file_metadata }
             rescue Google::Apis::ClientError => e
               Rails.logger.error "Failed to fetch file metadata for #{post.image_url}: #{e.message}"
@@ -52,10 +49,8 @@ class PostsController < ApplicationController
     def upload_image
         file = params[:post][:image]
         if file.present?
-          # 创建文件元数据
           metadata = Google::Apis::DriveV3::File.new(name: file.original_filename)
       
-          # 上传文件
           uploaded_file = @@drive.create_file(
             metadata,
             fields: 'id',
@@ -63,14 +58,12 @@ class PostsController < ApplicationController
             content_type: file.content_type
           )
       
-          # 设置文件权限为“任何人都可以查看”
           permission = Google::Apis::DriveV3::Permission.new(
             type: 'anyone',
             role: 'reader'
           )
           @@drive.create_permission(uploaded_file.id, permission)
       
-          # 返回文件 ID
           uploaded_file
         else
           Rails.logger.error "No file provided for upload"
@@ -79,7 +72,6 @@ class PostsController < ApplicationController
       end
 
     def list_files
-        # 列出前 100 个文件
         response = @@drive.list_files(
           page_size: 100,
           fields: "files(id, name, mime_type, web_view_link, created_time)"
