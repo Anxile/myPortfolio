@@ -1,3 +1,20 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ */
+@import "bootstrap/functions";
+@import "bootstrap/variables";
+
+
+@import "bootstrap";
 a {
     text-decoration: none;
     color: black;
@@ -68,44 +85,4 @@ button:active {
 .contact:active {
     background-color: white;
     color: black;
-}
-
-.resume {
-    padding: 5% 25%;
-}
-
-.title {
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
-}
-
-.name {
-    font-size: 2em;
-    font-family: 'Times New Roman', Times, serif;
-}
-
-.contact1 {
-    font-size: 1em;
-    font-family: 'Times New Roman', Times, serif;
-}
-
-.subtitle {
-    font-family: 'Courier New', Courier, monospace;
-    color: black;
-    border-bottom: solid 1px black;
-}
-
-.experience {
-    display: flex;
-    justify-content: space-between;
-}
-
-@media (max-width: 1500px) {
-    body {
-        background-image: none;
-    }
-    .resume {
-        padding: 5% 2%;
-    }
 }

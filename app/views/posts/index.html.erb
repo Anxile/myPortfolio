@@ -1,0 +1,16 @@
+<% @posts.each do |post| %>
+  <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+    <div class="card" style="width: 18rem;">
+      <% if post.respond_to?(:file_metadata) && post.file_metadata.present? %>
+        <img src="<%= post.file_metadata.thumbnail_link %>" alt="<%= post.file_metadata.name %>">
+      <% end %>
+      <div class="card-body">
+        <h5 class="card-title"><%= post.title %></h5>
+        <p class="card-text"><%= post.content %></p>
+        <% if post.respond_to?(:file_metadata) && post.file_metadata.present? %>
+          <a href="<%= post.file_metadata.web_view_link %>" class="btn btn-primary" target="_blank">View on Google Drive</a>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>

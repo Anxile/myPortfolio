@@ -559,9 +559,9 @@ button:active {
         color: black;
         font-size: 3.8vw;
         display: flex;
-        justify-content: center; /* Center horizontally */
-        align-items: center; /* Center vertically */
-        margin: 0 auto; /* Ensure it's centered within its container */
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
     }
 
     .statisticitem{
@@ -576,13 +576,13 @@ button:active {
         margin-top: 2%;
         color: white;
         text-align: center;
-        font-size: 4vw; /* 调整小屏幕下的字体大小 */
+        font-size: 4vw;
     }
 
     .intro {
         padding: 10%;
         text-align: center;
-        font-size: 4vw; /* 调整小屏幕下的字体大小 */
+        font-size: 4vw;
     }
 
     #opening {
@@ -592,13 +592,13 @@ button:active {
     #introduction {
         max-width: 100%;
         font-size: 4.5vw;
-        /* 调整小屏幕下的字体大小 */
+       
     }
 
     .hire {
         font-size: 5vw;
         padding: 2.5% 5.5%;
-        /* 调整小屏幕下的字体大小 */
+       
     }
 
     #hirebutton {
@@ -608,12 +608,12 @@ button:active {
     }
 
     .infolist strong, .infolist span {
-        font-size: 3vw; /* 调整小屏幕下的字体大小 */
+        font-size: 3vw;
     }
 
     #email{
         color: white;
-        font-size: 3vw; /* 调整小屏幕下的字体大小 */
+        font-size: 3vw;
     }
 }
 
@@ -642,12 +642,12 @@ button:active {
     .date {
         width: auto;
         margin-bottom: 20px;
-        font-size: 2vw; /* 调整小屏幕下的字体大小 */
+        font-size: 2vw;
     }
 
     .content {
         width: auto;
-        font-size: 2vw; /* 调整小屏幕下的字体大小 */
+        font-size: 2vw;
     }
 
     .activities-grid {

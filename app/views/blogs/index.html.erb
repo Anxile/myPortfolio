@@ -6,7 +6,7 @@
   <% end %>
 </div>
 
-<section class="content">
+<section class="content card-container" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
   <% @blogs.each do |blog| %>
     <div class="card" style="width: 28rem;">
       <% if blog["multimedia"].present? %>
