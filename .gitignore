@@ -34,3 +34,4 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 oceanic-cache-455721-r3-a6cd70167d67.json
+/oceanic-cache-*.json
