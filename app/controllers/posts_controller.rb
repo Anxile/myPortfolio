@@ -7,7 +7,7 @@ class PostsController < ApplicationController
 
     public_permission = Google::Apis::DriveV3::Permission.new(
     type: 'anyone',
-    role: 'reader'  # 允许任何人查看
+    role: 'reader'
   )
     
 
@@ -34,6 +34,7 @@ class PostsController < ApplicationController
 
     def show
         @post = Post.find_by(params[:id])
+        @comments = Comment.where(post_id: @post.id)
     end
 
     def new

@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
     puts password, user
     if user && user.authenticate(password)
       session[:user_id] = user.id
-      redirect_to users_path, notice: "Logged in!"
+      redirect_to posts_path, notice: "Logged in!"
     else
       flash.now[:alert] = "Email or password is invalid"
       redirect_to login_path

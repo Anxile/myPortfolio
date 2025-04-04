@@ -1,5 +1,5 @@
-<% @posts.each do |post| %>
-  <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+<div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+  <% @posts.each do |post| %>
     <div class="card" style="width: 18rem;">
       <% if post.respond_to?(:file_metadata) && post.file_metadata.present? %>
         <img src="<%= post.file_metadata.thumbnail_link %>" alt="<%= post.file_metadata.name %>">
@@ -12,5 +12,5 @@
         <% end %>
       </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
