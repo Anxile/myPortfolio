@@ -1,7 +1,6 @@
 class PostsController < ApplicationController
     require 'google/apis/drive_v3'
     require 'googleauth'
-    require 'dotenv/load'
     scopes = [Google::Apis::DriveV3::AUTH_DRIVE]
     authorizer = Google::Auth.get_application_default(scopes)
 
@@ -44,7 +43,7 @@ class PostsController < ApplicationController
         file_id = upload_image.id
         @post = Post.create(title: params[:post][:title], content: params[:post][:content], user_id: current_user.id, image_url: file_id)
         # @@drive.create_permission(file_id, @@permission)
-        @image=drive.get_file(file_id, fields: 'id, name, mime_type, web_view_link, created_time')
+        @image=@@drive.get_file(file_id, fields: 'id, name, mime_type, web_view_link, created_time')
     end
 
     def upload_image
