@@ -10,16 +10,11 @@
 
 User.destroy_all
 
+Session.destroy_all
+
 User.create [
   { name: 'Yihe', password: '123456', mail: 'chen61@mcmaster.ca'},
   { name: "Alice", password: "password123", mail: "alice@example.com" },
-  { name: "Bob", password: "securePass456", mail: "bob@example.com" },
-  { name: "Charlie", password: "qwerty789", mail: "charlie@example.com" },
-  { name: "David", password: "password000", mail: "david@example.com" },
-  { name: "Eve", password: "hunter2", mail: "eve@example.com" },
-  { name: "Frank", password: "letmein123", mail: "frank@example.com" },
-  { name: "Grace", password: "superSecret", mail: "grace@example.com" },
-  { name: "Hank", password: "password321", mail: "hank@example.com" },
-  { name: "Ivy", password: "abcdefg123", mail: "ivy@example.com" },
+  { name: "Test", password: "123456", mail: "test@example.com" },
   { name: "Jack", password: "p@ssw0rd!", mail: "jack@example.com" }
 ]
