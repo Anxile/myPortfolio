@@ -17,6 +17,25 @@
     </div>
   </div>
 
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-8">
+      <h3>User Comments</h3>
+      <% comments = Comment.where(user_id: @user.id) %>
+      <% if comments.any? %>
+        <ul class="list-group">
+          <% comments.each do |comment| %>
+            <li class="list-group-item">
+              <p><%= comment.content %></p>
+              <small class="text-muted">Posted on <%= comment.created_at.strftime('%Y-%m-%d %H:%M:%S') %></small>
+            </li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p class="text-muted">This user has not posted any comments yet.</p>
+      <% end %>
+    </div>
+  </div>
+
   <div class="text-center mt-4">
     <%= link_to "Back to users", users_path, class: "btn btn-secondary" %>
   </div>
