@@ -10,8 +10,6 @@
 
 User.destroy_all
 
-Session.destroy_all
-
 User.create [
   { name: 'Yihe', password: '123456', mail: 'chen61@mcmaster.ca'},
   { name: "Alice", password: "password123", mail: "alice@example.com" },

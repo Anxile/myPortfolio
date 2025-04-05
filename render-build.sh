@@ -19,9 +19,6 @@ bundle exec rake db:create || echo "数据库可能已存在，继续执行..."
 echo "运行数据库迁移..."
 bundle exec rake db:migrate
 
-echo "=== 开始清空数据库 ==="
-bundle exec rake db:reset || echo "无法清空数据库，继续执行..."
-
 echo "加载种子数据..."
 bundle exec rake db:seed || echo "种子数据可能已存在，继续执行..."
 
