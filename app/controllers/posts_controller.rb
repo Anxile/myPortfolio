@@ -65,10 +65,11 @@ class PostsController < ApplicationController
   end
 
   def create
-    file_id = upload_image.id
-    @post = Post.create(title: params[:post][:title], content: params[:post][:content], user_id: current_user.id, image_url: file_id)
+
+    file_id = upload_image.id if upload_image.present?
+    @post = Post.create(title: params[:post][:title], content: params[:post][:content], user_id: current_user.id, image_url: file_id|| nil)
     # @@drive.create_permission(file_id, @@permission)
-    @image=@@drive.get_file(file_id, fields: 'id, name, mime_type, web_view_link, created_time')
+    @image=@@drive.get_file(file_id, fields: 'id, name, mime_type, web_view_link, created_time') if file_id.present?
   end
 
   def upload_image
