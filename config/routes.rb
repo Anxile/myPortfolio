@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   namespace :api, default: {format: 'json'} do
-    get 'users/search', to:'users#search'
+    get 'users', to:'users#index'
     resources :blogs
   end
 end
