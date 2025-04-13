@@ -8,6 +8,8 @@ gem 'google-apis-drive_v3'
 gem 'googleauth'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'pg'
+gem 'devise'
+gem 'devise-jwt'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.5", ">= 7.1.5.1"
