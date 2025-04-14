@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+  namespace :api, default: { format: 'json' } do
+    namespace :v1 do
+      devise_for :api_users,
+                 path: 'users',
+                 controllers: {
+                   sessions: 'api/v1/sessions',
+                   registrations: 'api/v1/registrations'
+                 }
+      resources :users, only: [:index, :show]
+      resources :blogs
+    end
+  end
 
   resources :posts do
     resources :comments
@@ -25,10 +37,5 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
-  namespace :api, default: {format: 'json'} do
-    namespace :v1 do
-      resources :users
-      resources :blogs
-    end
-  end
+  
 end
