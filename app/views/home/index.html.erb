@@ -68,9 +68,11 @@
             <%= image_tag("bieber2.png", alt: "My photo", id: "me") %>
             <div class="subscription">
                 <span style="font-size: 1vw;">Subscribe my newsletter</span>
-                <button class="confirm">
-                    <div class="arrow-icon"></div>
-                </button>
+                
+                <%= link_to home_subscribe_path, class: "confirm" do %>
+                <div class="arrow-icon"></div>
+                <% end %>
+
             </div>
             <div class="social">
                 <a href="https://www.instagram.com/">
@@ -87,16 +89,13 @@
                     document.getElementById('copyButton').addEventListener('click', function () {
                         const link = 'https://www.linkedin.com/in/onebox-chen/';
 
-                        // 创建一个临时的文本输入框
                         const tempInput = document.createElement('input');
                         tempInput.value = link;
                         document.body.appendChild(tempInput);
 
-                        // 选中文本并复制
                         tempInput.select();
                         document.execCommand('copy');
 
-                        // 移除临时输入框
                         document.body.removeChild(tempInput);
 
                         alert('Link copied to clipboard!');
