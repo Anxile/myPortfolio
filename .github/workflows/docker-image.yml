@@ -17,6 +17,8 @@ jobs:
         run: echo "DOCKER_BUILDKIT=1" >> $GITHUB_ENV
 
       - name: Build the Docker image
-        run: docker build --no-cache . \
+        run: |
+          docker build \
+            --no-cache \
             --file Dockerfile \
-            --tag my-image-name:$(date +%s)
+            --tag my-image-name:$(date +%s) \
