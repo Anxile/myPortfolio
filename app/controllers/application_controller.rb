@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
         access_key_id: Rails.application.credentials.dig(:aws, :access_key_id),
         secret_access_key: Rails.application.credentials.dig(:aws, :secret_access_key)
         )
-        object = s3_resource.bucket('subscriptionmailer').object('You Got this!.png')
-        @signed_url = object.presigned_url(:get, expires_in: 300)
+        object = s3_resource.bucket('subscriptionmailer').object('Yihe Chen - Resume.png')
+        @signed_url = object.presigned_url(:get, expires_in: 86400)
       end
 end
