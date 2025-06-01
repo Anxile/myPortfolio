@@ -1,0 +1,13 @@
+name: Keep Render App Awake
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+
+jobs:
+  keep-awake:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Curl Render App
+        run: curl --silent --show-error --fail https://myportfolio-y5qh.onrender.com
