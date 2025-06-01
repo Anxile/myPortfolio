@@ -4,6 +4,9 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
+    <span style="font-size: 16px; font-weight: bold; color: #333;">
+      Hi <%= @user.name %>, Here's my resume for your reference, it will expire in 24 hours. Look forward to hearing from you soon!<br>
+    </span>
     <%= image_tag raw(@signed_url), style: "width: 100%; max-width: 800px; margin: 0 auto;" %>
   </body>
 </html>
