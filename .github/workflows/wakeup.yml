@@ -2,12 +2,15 @@ name: Keep Render App Awake
 
 on:
   schedule:
-    - cron: '*/5 * * * *'
-  workflow_dispatch:  
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
 
 jobs:
   keep-awake:
     runs-on: ubuntu-latest
     steps:
       - name: Curl Render App
-        run: curl --silent --show-error --fail https://myportfolio-y5qh.onrender.com
+        run: |
+          for i in {1..10}; do
+            curl --silent --show-error --fail https://myportfolio-y5qh.onrender.com && break || sleep 41
+          done
