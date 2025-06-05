@@ -3,16 +3,21 @@ class HomeController < ApplicationController
   def index
     @signed_url = s3_client
   end
-  def subscribe
-    @user = current_user
-    if current_user
-      @signed_url = s3_client
-      SubscriptionMailer.subscribe(@user, @signed_url).deliver_now
-    end
+  require 'ostruct'
 
+  def subscribe
+    email = params[:email]
     respond_to do |format|
-      format.html { redirect_to root_path, notice: 'succeed' }
-      format.json { head :no_content }
+      if email.present?
+        user = OpenStruct.new(email: email)
+        @signed_url = s3_client
+        SubscriptionMailer.subscribe(user, @signed_url).deliver_now
+        format.html { redirect_to root_path, notice: 'Resume sent successfully.' }
+        format.json { head :no_content }
+      else
+        format.html { redirect_to root_path, alert: 'Please provide an email.' }
+        format.json { head :unprocessable_entity }
+      end
     end
   end
 end
