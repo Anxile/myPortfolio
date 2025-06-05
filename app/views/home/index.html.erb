@@ -67,12 +67,12 @@
         <aside class="right-part">
             <%= image_tag("bieber2.png", alt: "My photo", id: "me") %>
             <div class="subscription">
-                <span style="font-size: 1vw;">Subscribe my newsletter</span>
-                
-                <%= link_to home_subscribe_path, class: "confirm" do %>
-                <div class="arrow-icon"></div>
+                <%= form_with url: home_subscribe_path, method: :post, local: true do |form| %>
+                    <%= form.email_field :email, placeholder: "Enter your email", required: true %>
+                    <button type="submit" class="confirm">
+                        <div class="arrow-icon"></div>
+                    </button>
                 <% end %>
-
             </div>
             <div class="social">
                 <a href="https://github.com/Anxile?tab=overview&from=2025-01-01&to=2025-12-31">
