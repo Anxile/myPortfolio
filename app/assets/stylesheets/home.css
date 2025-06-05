@@ -12,9 +12,7 @@
 
 body {
     margin: 0;
-    /* 移除默认的外边距 */
     padding: 0;
-    /* 移除默认的内边距 */
 }
 
 a {
@@ -106,9 +104,7 @@ button:active {
 .right-part {
     align-items: center;
     max-height: 100%;
-    /* 限制右侧部分的最大高度 */
     overflow: hidden;
-    /* 隐藏超出部分 */
 }
 
 #coursename {
@@ -130,21 +126,16 @@ button:active {
     padding-left: 9%;
     margin-bottom: 0;
     font-size: 1.5vw;
-    /* 使用相对单位设置字体大小 */
-    /* 移除底部margin */
 }
 
 #exhibition {
     font-size: 1vw;
-    /* 使用相对单位设置字体大小 */
 }
 
 #me {
     width: 100%;
     height: 100%;
     max-height: 100%;
-    /* 限制图片的最大高度 */
-    /* 让图片填充整个右侧区域 */
     object-fit: cover;
     background: linear-gradient(to bottom, #6e480252, #c57f0508);
 }
@@ -204,7 +195,6 @@ button:active {
     font-family: Inter;
     font-weight: 800;
     font-size: 4vw;
-    /* 使用相对单位设置字体大小 */
     margin: 2% 0%;
 }
 
@@ -212,7 +202,6 @@ button:active {
     font-family: Edu AU VIC WA NT Guides;
     font-weight: 300;
     font-size: 1.5vw;
-    /* 使用相对单位设置字体大小 */
     max-width: 85%;
     margin-top: 20px;
     margin-bottom: 40px;
@@ -220,7 +209,6 @@ button:active {
 
 #statistic {
     margin-top: auto;
-    /* 将统计部分推到底部 */
     font-family: Inter;
     font-size: 1vw;
     padding: 20px 5%;
@@ -331,7 +319,6 @@ button:active {
     float: right;
     width: 15%;
     height: 88%;
-    /* 减去上下padding的总和 */
     background-color: rgb(29, 29, 29);
     margin: 3% 1%;
     border: none;
@@ -355,7 +342,6 @@ button:active {
     border-top: 2px solid white;
     transform: rotate(45deg);
     margin-left: -5px;
-    /* 稍微向左调整位置 */
 }
 
 
