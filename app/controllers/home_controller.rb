@@ -7,6 +7,7 @@ class HomeController < ApplicationController
 
   def subscribe
     email = params[:email]
+    HrEmail.create(email: email) if email.present? && HrEmail.where(email: email).empty?
     respond_to do |format|
       if email.present?
         user = OpenStruct.new(email: email)

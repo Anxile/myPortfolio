@@ -1,0 +1,2 @@
+class HrEmail < ApplicationRecord
+end
