@@ -8,8 +8,8 @@
 
     <% if controller_name == "home" %>
       <%= stylesheet_link_tag "home", media: "all" %>
-    <% elsif controller_name == "resume" %>
-      <%= stylesheet_link_tag "resume", media: "all" %>
+    # <% elsif controller_name == "resume" %>
+    #   <%= stylesheet_link_tag "resume", media: "all" %>
     <% else %>
       <%= stylesheet_link_tag "application", media: "all" %>
     <% end %>
@@ -21,7 +21,7 @@
       <span class="catalog">
           <%= link_to 'Home',root_path,id:'header_option'%>
           <%= link_to 'News',blogs_path,id:'header_option'%>
-          <%= link_to 'Resume',resume_path,id:'header_option'%>
+          <%#= <%= link_to 'Resume',resume_path,id:'header_option'%>
           <%= link_to 'Community', posts_path, id:'header_option'%>
           <%= link_to 'Panel', users_path, id:'header_option'%>
       </span>
