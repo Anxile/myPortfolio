@@ -19,7 +19,12 @@ class ApplicationController < ActionController::Base
         access_key_id: Rails.application.credentials.dig(:aws, :access_key_id),
         secret_access_key: Rails.application.credentials.dig(:aws, :secret_access_key)
         )
-        object = s3_resource.bucket('subscriptionmailer').object('Yihe Chen - Resume.png')
-        @signed_url = object.presigned_url(:get, expires_in: 86400)
+        resume = s3_resource.bucket('subscriptionmailer').object('Yihe Chen - Resume.png')
+        transcript1 = s3_resource.bucket('subscriptionmailer').object('MCM_TS_MCOFF_Page_1.png')
+        transcript2 = s3_resource.bucket('subscriptionmailer').object('MCM_TS_MCOFF_Page_2.png')
+        @signed_url_resume = resume.presigned_url(:get, expires_in: 86400)
+        @signed_url_transcript1 = transcript1.presigned_url(:get, expires_in: 86400)
+        @signed_url_transcript2 = transcript2.presigned_url(:get, expires_in: 86400)
+        return @signed_url_resume, @signed_url_transcript1, @signed_url_transcript2
       end
 end
