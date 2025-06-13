@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_06_11_192314) do
+ActiveRecord::Schema[7.1].define(version: 2025_06_13_175112) do
   create_table "comments", force: :cascade do |t|
     t.text "content"
     t.boolean "has_modified"
@@ -25,6 +25,8 @@ ActiveRecord::Schema[7.1].define(version: 2025_06_11_192314) do
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "ip_address", default: ""
+    t.string "user_agent", default: ""
   end
 
   create_table "moods", force: :cascade do |t|

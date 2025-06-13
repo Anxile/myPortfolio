@@ -7,12 +7,12 @@ class HomeController < ApplicationController
 
   def subscribe
     email = params[:email]
-    HrEmail.create(email: email) if email.present? && HrEmail.where(email: email).empty?
+    HrEmail.create(email: email, user_agent: request.user_agent, ip_address: request.remote_ip) if email.present? && HrEmail.where(email: email).empty?
     respond_to do |format|
       if email.present?
         user = OpenStruct.new(email: email)
         @signed_url_resume, @signed_url_transcript1, @signed_url_transcript2 = s3_client
-        SubscriptionMailer.subscribe(user, @signed_url_resume, @signed_url_transcript1, @signed_url_transcript2).deliver_now
+        # SubscriptionMailer.subscribe(user, @signed_url_resume, @signed_url_transcript1, @signed_url_transcript2).deliver_now
         format.html { redirect_to root_path, notice: 'Resume sent successfully.' }
         format.json { head :no_content }
       else
