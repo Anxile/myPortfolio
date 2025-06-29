@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
   skip_before_action :ensure_user_logged_in
   def index
-    @signed_url_resume, @signed_url_transcript1, @signed_url_transcript2 = s3_client
+    @signed_url_resume, @signed_url_transcript1, @signed_url_transcript2, @signed_url_test = s3_client
   end
   require 'ostruct'
 
@@ -11,8 +11,8 @@ class HomeController < ApplicationController
     respond_to do |format|
       if email.present?
         user = OpenStruct.new(email: email)
-        @signed_url_resume, @signed_url_transcript1, @signed_url_transcript2 = s3_client
-        SubscriptionMailer.subscribe(user, @signed_url_resume, @signed_url_transcript1, @signed_url_transcript2).deliver_now
+        @signed_url_resume, @signed_url_transcript1, @signed_url_transcript2, @signed_url_test = s3_client
+        SubscriptionMailer.subscribe(user, @signed_url_resume, @signed_url_transcript1, @signed_url_transcript2, @signed_url_test).deliver_now
         format.html { redirect_to root_path, notice: 'Resume sent successfully.' }
         format.json { head :no_content }
       else
