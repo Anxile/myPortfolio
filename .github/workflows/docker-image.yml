@@ -49,7 +49,7 @@ jobs:
 
     - name: Decode Google credentials
       run: |
-        echo "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_BASE64 }}" | base64 --decode > google-credentials.json
+        echo "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_BASE64 }}" | base64 -d > google-credentials.json
 
 
     - name: Copy Google credentials to EC2
