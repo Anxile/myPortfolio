@@ -41,14 +41,16 @@ jobs:
         echo "DATABASE_USERNAME=${{ secrets.DATABASE_USERNAME }}" >> .env
         echo "DATABASE_PASSWORD=${{ secrets.DATABASE_PASSWORD }}" >> .env
         echo "RAILS_MASTER_KEY=${{ secrets.RAILS_MASTER_KEY }}" >> .env
+        echo "GOOGLE_APPLICATION_CREDENTIALS=/rails/google-credentials.json" >> .env
 
     - name: Copy .env to EC2
       run: |
         scp -o StrictHostKeyChecking=no -i ~/.ssh/my-ec2-key.pem .env ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}:/home/ubuntu/.env
 
-    - name: Write Google credentials to file
+    - name: Decode Google credentials
       run: |
-        echo '${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}' > google-credentials.json
+        echo "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_BASE64 }}" | base64 -d > google-credentials.json
+
 
     - name: Copy Google credentials to EC2
       run: |
