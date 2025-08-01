@@ -41,6 +41,7 @@ jobs:
         echo "DATABASE_USERNAME=${{ secrets.DATABASE_USERNAME }}" >> .env
         echo "DATABASE_PASSWORD=${{ secrets.DATABASE_PASSWORD }}" >> .env
         echo "RAILS_MASTER_KEY=${{ secrets.RAILS_MASTER_KEY }}" >> .env
+        echo "GOOGLE_APPLICATION_CREDENTIALS=/rails/google-credentials.json" >> .env
 
     - name: Copy .env to EC2
       run: |
