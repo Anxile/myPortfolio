@@ -3,6 +3,7 @@ name: Deploy to EC2
 on:
   push:
     branches: [ master ]
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -13,30 +14,51 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    - name: Set up SSH key
+    - name: Build Docker image
+      run: |
+        docker build -t myportfolio .
+
+    - name: Save Docker image to tar file
+      run: |
+        docker save myportfolio > myportfolio.tar
+
+    - name: Upload SSH key
       run: |
         mkdir -p ~/.ssh
         echo "${{ secrets.EC2_KEY }}" > ~/.ssh/my-ec2-key.pem
         chmod 600 ~/.ssh/my-ec2-key.pem
 
-    - name: Deploy to EC2
+    - name: Copy Docker image to EC2
       run: |
-        ssh -o StrictHostKeyChecking=no -i ~/.ssh/my-ec2-key.pem ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
+        scp -o StrictHostKeyChecking=no -i ~/.ssh/my-ec2-key.pem myportfolio.tar ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}:/home/ubuntu/
+
+    - name: SSH and load + run Docker image
+      run: |
+        ssh -o StrictHostKeyChecking=no -i ~/.ssh/my-ec2-key.pem ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << EOF
           set -e
 
-          echo "Pulling latest code"
-          cd ~/myPortfolio
-          git pull origin master
-
-          echo "Stopping old container"
+          echo "Clean old container"
           docker stop myportfolio || true
           docker rm myportfolio || true
 
-          echo "Building Docker image"
-          docker build -t myportfolio .
+          echo "Clean old image and cache"
+          docker rmi myportfolio || true
+          docker system prune -af || true
 
-          echo "Running new container"
-          docker run -d -p 3001:3000 --name myportfolio myportfolio
+          echo "Load Docker image"
+          docker load < /home/ubuntu/myportfolio.tar
 
-          echo "!!!Deployment completed!!!"
+          echo "Run with injected secrets"
+          docker run -d -p 3001:3000 --name myportfolio \
+            -e RAILS_ENV=${{ secrets.RAILS_ENV }} \
+            -e SECRET_KEY_BASE=${{ secrets.SECRET_KEY_BASE }} \
+            -e DATABASE_HOST=${{ secrets.DATABASE_HOST }} \
+            -e DATABASE_NAME=${{ secrets.DATABASE_NAME }} \
+            -e DATABASE_USERNAME=${{ secrets.DATABASE_USERNAME }} \
+            -e DATABASE_PASSWORD=${{ secrets.DATABASE_PASSWORD }} \
+            -e RAILS_MASTER_KEY=${{ secrets.RAILS_MASTER_KEY }} \
+            -e GOOGLE_APPLICATION_CREDENTIALS=/rails/google-credentials.json \
+            myportfolio
+
+          echo "!!!Deployment complete!!!"
         EOF
