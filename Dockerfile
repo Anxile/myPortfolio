@@ -31,8 +31,6 @@ RUN bundle install && \
     rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git && \
     bundle exec bootsnap precompile --gemfile
 
-COPY .env.production /rails/.env.production
-
 COPY . .
 
 RUN bundle exec bootsnap precompile app/ lib/
