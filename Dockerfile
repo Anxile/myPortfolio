@@ -63,6 +63,6 @@ RUN useradd rails --create-home --shell /bin/bash && \
 USER rails:rails
 WORKDIR /rails
 
-ENTRYPOINT ["/bin/bash", "-c", "set -a && source .env.production && set +a && exec ./bin/rails server -b 0.0.0.0"]
+ENTRYPOINT ["./bin/rails", "server", "-b", "0.0.0.0"]
 
 EXPOSE 3000
