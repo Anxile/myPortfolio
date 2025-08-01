@@ -27,6 +27,7 @@ jobs:
 
           echo "Pulling latest code"
           cd ~/myPortfolio
+          git reset --hard HEAD
           git pull origin master
 
           echo "Stopping old container"
