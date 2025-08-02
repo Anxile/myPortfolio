@@ -405,7 +405,7 @@ button:active {
 .content {
     width: 45%;
     padding: 20px;
-    background: white;
+    background: #f8f9fa;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
 }
