@@ -348,7 +348,7 @@ button:active {
 /* Career Section Styles */
 .career-section {
     padding: 80px 90px;
-    background-color: #f8f9fa;
+    background-color: white
 }
 
 .section-header {
@@ -413,7 +413,7 @@ button:active {
 /* Skills Section Styles */
 .skills-section {
     padding: 80px 90px;
-    background-color: white;
+    background-color: #f8f9fa;
 }
 
 .skills-container {
