@@ -1,8 +1,8 @@
 class HomeController < ApplicationController
   skip_before_action :ensure_user_logged_in
-  def index
-    @signed_url_resume, @signed_url_transcript1, @signed_url_transcript2, @signed_url_test = s3_client
-  end
+  # def index
+  #   @signed_url_resume, @signed_url_transcript1, @signed_url_transcript2, @signed_url_test = s3_client
+  # end
   require 'ostruct'
 
   def subscribe

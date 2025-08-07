@@ -4,6 +4,7 @@ class PostsController < ApplicationController
 
 
   begin
+    # Initialize Google Drive API Using Oauth2
     scopes = [Google::Apis::DriveV3::AUTH_DRIVE]
     authorizer = Google::Auth.get_application_default(scopes)
     Rails.logger.info "Authorizer: #{authorizer.inspect}"
