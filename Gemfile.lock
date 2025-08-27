@@ -142,6 +142,7 @@ GEM
     faraday-net_http (3.4.1)
       net-http (>= 0.5.0)
     ffi (1.17.2-x64-mingw-ucrt)
+    ffi (1.17.2-x86_64-linux-gnu)
     globalid (1.2.1)
       activesupport (>= 6.1)
     google-apis-core (1.0.1)
@@ -218,8 +219,11 @@ GEM
     nio4r (2.7.4)
     nokogiri (1.18.9-x64-mingw-ucrt)
       racc (~> 1.4)
+    nokogiri (1.18.9-x86_64-linux-gnu)
+      racc (~> 1.4)
     os (1.1.4)
     pg (1.6.1-x64-mingw-ucrt)
+    pg (1.6.1-x86_64-linux)
     popper_js (2.11.8)
     pp (0.6.2)
       prettyprint
@@ -311,6 +315,7 @@ GEM
       activesupport (>= 6.1)
       sprockets (>= 3.0.0)
     sqlite3 (2.7.3-x64-mingw-ucrt)
+    sqlite3 (2.7.3-x86_64-linux-gnu)
     stimulus-rails (1.3.4)
       railties (>= 6.0.0)
     stringio (3.1.7)
@@ -343,6 +348,7 @@ GEM
 
 PLATFORMS
   x64-mingw-ucrt
+  x86_64-linux
 
 DEPENDENCIES
   aws-sdk-s3
