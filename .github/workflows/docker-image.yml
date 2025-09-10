@@ -80,8 +80,8 @@ jobs:
             myportfolio
 
           echo "Clean up sensitive files"
-          rm /home/ubuntu/.env || true
-          rm /home/ubuntu/google-credentials.json || true
+          #rm /home/ubuntu/.env || true
+          #rm /home/ubuntu/google-credentials.json || true
 
           echo "!!!Deployment complete!!!"
         EOF
